@@ -1,17 +1,14 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Layout from '../components/Layout';
-import Date from '../components/Date';
-import styleUtils from '../styles/utils.module.css';
-import { getSortedPostData } from '../lib/posts';
+import Head from 'next/head'
+import Link from 'next/link'
+import React from 'react'
+import Layout from '../components/Layout'
+import Date from '../components/Date'
+import styleUtils from '../styles/utils.module.css'
+import { getSortedPostData } from '../lib/posts'
 
-const siteTitle = 'Something Cool!';
+const siteTitle = 'Something Cool!'
 
-/**
- * @typedef {{ id: String, title: String, date: String }} Post
- * @param {{ posts: Post[] }} param
- */
-export default function Home({ posts }) {
+const Home: React.FC<{ posts: Post[] }> = ({ posts }) => {
 	return (
 		<Layout home>
 			<Head>
@@ -42,10 +39,13 @@ export default function Home({ posts }) {
 				</ul>
 			</section>
 		</Layout>
-	);
+	)
 }
 
-export const getStaticProps = async () => {
-	const posts = getSortedPostData();
-	return { props: { posts } };
-};
+type Props = { props: { posts: Post[] } }
+export const getStaticProps = async (): Promise<Props> => {
+	const posts = getSortedPostData()
+	return { props: { posts } }
+}
+
+export default Home

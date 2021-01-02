@@ -1,0 +1,36 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:prettier/recommended",
+		"airbnb-typescript"
+	],
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"project": "./tsconfig.json"
+	},
+	"plugins": ["@typescript-eslint", "prettier", "react", "react-hooks"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
+		// Conflicting rules
+		"react/prop-types": "off",
+		"react/react-in-jsx-scope": "off",
+		"@typescript-eslint/indent": "off",
+		"@typescript-eslint/semi": "off",
+		"no-tabs": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"jsx-a11y/anchor-is-valid": "off",
+		"spaced-comment": "off",
+		"react/no-danger": "off",
+		"arrow-body-style": "off",
+
+		"react/jsx-props-no-spreading": "off"
+	}
+}
